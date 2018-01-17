@@ -14,7 +14,7 @@
     <meta name="description" content="大家都知道，Java是一门面向对象的设计语言，只有存在类，才能体现面向对象编程这一特征。那么，究竟什么是类呢？  1.从概念上区分：类、对象、属性类：①通过对多个相同类型的对象进行分析，把对象抽象成类，也就是说具有相同特性和行为的对象的抽象就是类；②类是一种引用数据类型；③并不是说所有的类都具有属性与方法；④类可以创建多个对象。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java的类与继承">
-<meta property="og:url" content="http://yoursite.com/2017/12/25/Java的类与继承/index.html">
+<meta property="og:url" content="http://yoursite.com/post/Java的类与继承.html">
 <meta property="og:site_name" content="沐雨星光">
 <meta property="og:description" content="大家都知道，Java是一门面向对象的设计语言，只有存在类，才能体现面向对象编程这一特征。那么，究竟什么是类呢？  1.从概念上区分：类、对象、属性类：①通过对多个相同类型的对象进行分析，把对象抽象成类，也就是说具有相同特性和行为的对象的抽象就是类；②类是一种引用数据类型；③并不是说所有的类都具有属性与方法；④类可以创建多个对象。">
 <meta property="og:locale" content="zh-Hans">
@@ -50,7 +50,7 @@
 				<h1 class="site-name"><a href="/" title="沐雨星光">沐雨星光</a></h1>
 				<h2 class="blog-motto">分享技术，共同进步！</h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -66,7 +66,7 @@
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
 						<input type="hidden" name="q" value="site:yoursite.com">
 					</form>
 					
@@ -82,14 +82,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/12/25/Java的类与继承/" title="Java的类与继承" itemprop="url">Java的类与继承</a>
+      <a href="/post/Java的类与继承.html" title="Java的类与继承" itemprop="url">Java的类与继承</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="张雨" target="_blank" itemprop="author">张雨</a>
 		
   <p class="article-time">
-    <time datetime="2017-12-25T13:10:19.137Z" itemprop="datePublished"> 發表於 2017-12-25</time>
+    <time datetime="2017-12-25T13:10:19.137Z" itemprop="datePublished"> Published 2017-12-25</time>
     
   </p>
 </header>
@@ -137,7 +137,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2017/12/25/Java的类与继承/" data-title="Java的类与继承 | 沐雨星光" data-tsina="" class="share clearfix">
+	  <div data-url="http://yoursite.com/post/Java的类与继承.html" data-title="Java的类与继承 | 沐雨星光" data-tsina="" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -153,17 +153,17 @@
 
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">文章目錄</strong>
+  <strong class="toc-title">Contents</strong>
  
  <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-从概念上区分：类、对象、属性"><span class="toc-number">1.</span> <span class="toc-text">1.从概念上区分：类、对象、属性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#关于构造方法"><span class="toc-number">2.</span> <span class="toc-text">关于构造方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#构造方法存在的意义"><span class="toc-number">3.</span> <span class="toc-text">构造方法存在的意义</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#下面具体说明一下类的初始化对象："><span class="toc-number">4.</span> <span class="toc-text">下面具体说明一下类的初始化对象：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-有关继承"><span class="toc-number">5.</span> <span class="toc-text">2.有关继承</span></a></li></ol>
  
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
 <aside class="clearfix">
 
   
@@ -174,7 +174,7 @@
   
 
   <div class="linkslist">
-  <p class="asidetitle">友情鏈接</p>
+  <p class="asidetitle">Links</p>
     <ul>
         
           <li>
@@ -414,7 +414,7 @@ var _hmt = _hmt || [];
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="返回頂部"><img src="/img/scrollup.png"/></a>
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 
