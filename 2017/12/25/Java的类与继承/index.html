@@ -11,19 +11,19 @@
     
 
     
-    <meta name="description" content="大家都知道，Java是一门面向对象的设计语言，只有存在类，才能体现面向对象编程这一特征。那么，究竟什么是类呢？  1.从概念上区分：类、对象、属性类：①通过对多个相同类型的对象进行分析，把对象抽象成类，也就是说具有相同特性和行为的对象的抽象就是类；②类是一种引用数据类型；③并不是说所有的类都具有属性与方法；④类可以创建多个对象。对象：①对象是类的示例，类是对象的模板；②要想使用类中定义的方法或属">
+    <meta name="description" content="大家都知道，Java是一门面向对象的设计语言，只有存在类，才能体现面向对象编程这一特征。那么，究竟什么是类呢？&amp;lt;!–more–!&amp;gt; 1.从概念上区分：类、对象、属性 类：①通过对多个相同类型的对象进行分析，把对象抽象成类，也就是说具有相同特性和行为的对象的抽象就是类；②类是一种引用数据类型；③并不是说所有的类都具有属性与方法；④类可以创建多个对象。对象：①对象是类的示例，类是对象的模">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java的类与继承">
 <meta property="og:url" content="http://yoursite.com/2017/12/25/Java的类与继承/index.html">
 <meta property="og:site_name" content="沐雨星光">
-<meta property="og:description" content="大家都知道，Java是一门面向对象的设计语言，只有存在类，才能体现面向对象编程这一特征。那么，究竟什么是类呢？  1.从概念上区分：类、对象、属性类：①通过对多个相同类型的对象进行分析，把对象抽象成类，也就是说具有相同特性和行为的对象的抽象就是类；②类是一种引用数据类型；③并不是说所有的类都具有属性与方法；④类可以创建多个对象。对象：①对象是类的示例，类是对象的模板；②要想使用类中定义的方法或属">
+<meta property="og:description" content="大家都知道，Java是一门面向对象的设计语言，只有存在类，才能体现面向对象编程这一特征。那么，究竟什么是类呢？&amp;lt;!–more–!&amp;gt; 1.从概念上区分：类、对象、属性 类：①通过对多个相同类型的对象进行分析，把对象抽象成类，也就是说具有相同特性和行为的对象的抽象就是类；②类是一种引用数据类型；③并不是说所有的类都具有属性与方法；④类可以创建多个对象。对象：①对象是类的示例，类是对象的模">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3579909-cedfa149d357791d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3579909-3b3a64c95d8be5bc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-01-17T01:20:50.074Z">
+<meta property="og:updated_time" content="2018-01-17T02:49:59.222Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java的类与继承">
-<meta name="twitter:description" content="大家都知道，Java是一门面向对象的设计语言，只有存在类，才能体现面向对象编程这一特征。那么，究竟什么是类呢？  1.从概念上区分：类、对象、属性类：①通过对多个相同类型的对象进行分析，把对象抽象成类，也就是说具有相同特性和行为的对象的抽象就是类；②类是一种引用数据类型；③并不是说所有的类都具有属性与方法；④类可以创建多个对象。对象：①对象是类的示例，类是对象的模板；②要想使用类中定义的方法或属">
+<meta name="twitter:description" content="大家都知道，Java是一门面向对象的设计语言，只有存在类，才能体现面向对象编程这一特征。那么，究竟什么是类呢？&amp;lt;!–more–!&amp;gt; 1.从概念上区分：类、对象、属性 类：①通过对多个相同类型的对象进行分析，把对象抽象成类，也就是说具有相同特性和行为的对象的抽象就是类；②类是一种引用数据类型；③并不是说所有的类都具有属性与方法；④类可以创建多个对象。对象：①对象是类的示例，类是对象的模">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/3579909-cedfa149d357791d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
     
@@ -96,9 +96,9 @@
 	<div class="article-content">
 		
 		<blockquote>
-<p>大家都知道，Java是一门面向对象的设计语言，只有存在类，才能体现面向对象编程这一特征。那么，究竟什么是类呢？</p>
-</blockquote>
-<h5 id="1-从概念上区分：类、对象、属性"><a href="#1-从概念上区分：类、对象、属性" class="headerlink" title="1.从概念上区分：类、对象、属性"></a>1.从概念上区分：类、对象、属性</h5><p><strong>类</strong>：①通过对多个相同类型的对象进行分析，把对象抽象成类，也就是说具有相同特性和行为的对象的抽象就是类；<br>②类是一种引用数据类型；<br>③并不是说所有的类都具有属性与方法；<br>④类可以创建多个对象。<br><strong>对象</strong>：①对象是类的示例，类是对象的模板；<br>②要想使用类中定义的方法或属性，首先要声明类的对象。当然，被static修饰的可以直接用类名来调用；<br>③通过类的对象调用类的属性与方法；<br>④类的对象具有类中定义的所有方法与属性，对象有可以成为实例；<br>⑤对象的属性的初始值与类的属性的默认值是一致的。<br><strong>属性</strong>：①用于区分对象，它是对象具有的特征；<br>②类的属性又成为实例变量；<br>③类的属性在没有赋值的情况下存在默认值。</p>
+<p>大家都知道，Java是一门面向对象的设计语言，只有存在类，才能体现面向对象编程这一特征。那么，究竟什么是类呢？<br>&lt;!–more–!&gt;</p>
+<h5 id="1-从概念上区分：类、对象、属性"><a href="#1-从概念上区分：类、对象、属性" class="headerlink" title="1.从概念上区分：类、对象、属性"></a>1.从概念上区分：类、对象、属性</h5></blockquote>
+<p><strong>类</strong>：①通过对多个相同类型的对象进行分析，把对象抽象成类，也就是说具有相同特性和行为的对象的抽象就是类；<br>②类是一种引用数据类型；<br>③并不是说所有的类都具有属性与方法；<br>④类可以创建多个对象。<br><strong>对象</strong>：①对象是类的示例，类是对象的模板；<br>②要想使用类中定义的方法或属性，首先要声明类的对象。当然，被static修饰的可以直接用类名来调用；<br>③通过类的对象调用类的属性与方法；<br>④类的对象具有类中定义的所有方法与属性，对象有可以成为实例；<br>⑤对象的属性的初始值与类的属性的默认值是一致的。<br><strong>属性</strong>：①用于区分对象，它是对象具有的特征；<br>②类的属性又成为实例变量；<br>③类的属性在没有赋值的情况下存在默认值。</p>
 <blockquote>
 <p>1）对于  char、short、byte、int、long、float、double等基本数据类型的变量来说会默认初始化为0（float、double默认初始化为0.0，boolean变量默认会被初始化为false）；<br>2）对于引用类型的变量（String类型、数组、自定义的类等），会默认初始化为null。</p>
 </blockquote>
