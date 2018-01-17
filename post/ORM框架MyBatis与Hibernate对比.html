@@ -1,0 +1,452 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>ORM框架MyBatis与Hibernate对比 | 沐雨星光</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="张雨">
+    
+
+    
+    <meta name="description" content="1.开发速度对比Hibernate的学习成本要比MyBatis高，MyBits框架相对容易上手。比较二者的开发速度，不仅要考虑两者的特性及性能，更要考虑项目需求究竟哪个更适合开发，比如：  一个项目中用到的复杂查询基本没有，就是最基本的增删改查，这样选择Hibernate的效率就要高些了，因为基本的SQL语句已经被封装好，根本不需要手写SQL，可以节省大量时间，但是对于一个大型项目，复杂的查询语句">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ORM框架MyBatis与Hibernate对比">
+<meta property="og:url" content="http://yoursite.com/post/ORM框架MyBatis与Hibernate对比.html">
+<meta property="og:site_name" content="沐雨星光">
+<meta property="og:description" content="1.开发速度对比Hibernate的学习成本要比MyBatis高，MyBits框架相对容易上手。比较二者的开发速度，不仅要考虑两者的特性及性能，更要考虑项目需求究竟哪个更适合开发，比如：  一个项目中用到的复杂查询基本没有，就是最基本的增删改查，这样选择Hibernate的效率就要高些了，因为基本的SQL语句已经被封装好，根本不需要手写SQL，可以节省大量时间，但是对于一个大型项目，复杂的查询语句">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3579909-cdf05dd083e004b7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3579909-87829dcacfbb0a6a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3579909-8af5678176c7e267.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-01-17T07:40:17.688Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ORM框架MyBatis与Hibernate对比">
+<meta name="twitter:description" content="1.开发速度对比Hibernate的学习成本要比MyBatis高，MyBits框架相对容易上手。比较二者的开发速度，不仅要考虑两者的特性及性能，更要考虑项目需求究竟哪个更适合开发，比如：  一个项目中用到的复杂查询基本没有，就是最基本的增删改查，这样选择Hibernate的效率就要高些了，因为基本的SQL语句已经被封装好，根本不需要手写SQL，可以节省大量时间，但是对于一个大型项目，复杂的查询语句">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/3579909-cdf05dd083e004b7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="沐雨星光" title="沐雨星光"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="沐雨星光">沐雨星光</a></h1>
+				<h2 class="blog-motto">分享技术，共同进步！</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/about">关于</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/post/ORM框架MyBatis与Hibernate对比.html" title="ORM框架MyBatis与Hibernate对比" itemprop="url">ORM框架MyBatis与Hibernate对比</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="张雨" target="_blank" itemprop="author">张雨</a>
+		
+  <p class="article-time">
+    <time datetime="2018-01-17T07:39:01.041Z" itemprop="datePublished"> Published 2018-01-17</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<h5 id="1-开发速度对比"><a href="#1-开发速度对比" class="headerlink" title="1.开发速度对比"></a>1.开发速度对比</h5><p>Hibernate的学习成本要比MyBatis高，MyBits框架相对容易上手。比较二者的开发速度，不仅要考虑两者的特性及性能，更要考虑项目需求究竟哪个更适合开发，比如：</p>
+<blockquote>
+<p>一个项目中用到的复杂查询基本没有，就是最基本的增删改查，这样选择Hibernate的效率就要高些了，因为基本的SQL语句已经被封装好，根本不需要手写SQL，可以节省大量时间，但是对于一个大型项目，复杂的查询语句较多，使用MyBatis就会加快很多，而且SQL语句管理也会很方便。</p>
+</blockquote>
+<h5 id="2-开发工作量对比"><a href="#2-开发工作量对比" class="headerlink" title="2.开发工作量对比"></a>2.开发工作量对比</h5><p>MyBatis与Hibernate都有相应的代码生成工具，可以生成简单的DAO层方法。针对高级查询，MyBatis需要手动编写SQL语句及resultMap。而Hibernate有良好的映射机制，开发者无需关心SQL的生成与结果映射，可以更关注于业务流程。</p>
+<h5 id="3-SQL优化方面"><a href="#3-SQL优化方面" class="headerlink" title="3.SQL优化方面"></a>3.SQL优化方面</h5><p>Hibernate的查询会将表中的所有字段查询出来，这一点会消耗性能。Hibernate也可以自己手写SQL指定要查询的字段，但这样就会破坏了Hibernate开发的简洁性，一般不推荐。而MyBatis的SQL语句是自己手写的，我们可以根据需求指定要查询的字段。<br>Hibernate的HQL语句调优需要将SQL打印出来，MyBatis的SQL是自己手动写的所以调整方便。但Hibernate具有自己的日志统计。Mybatis本身不带日志统计，使用Log4j进行日志记录。</p>
+<h5 id="4-对象管理的对比"><a href="#4-对象管理的对比" class="headerlink" title="4.对象管理的对比"></a>4.对象管理的对比</h5><p>Hibernate 是完整的对象/关系映射解决方案，它提供了对象状态管理（state management）的功能，使开发者不再需要理会底层数据库系统的细节。也就是说，相对于常见的 JDBC/SQL 持久层方案中需要管理 SQL 语句，Hibernate采用了更自然的面向对象的视角来持久化 Java 应用中的数据。<br>换句话说，使用 Hibernate 的开发者应该总是关注对象的状态（state），不必考虑 SQL 语句的执行。这部分细节已经由 Hibernate 掌管妥当，只有开发者在进行系统性能调优的时候才需要进行了解。而MyBatis在这一块没有文档说明，用户需要对对象自己进行详细的管理。</p>
+<h5 id="5-缓存机制"><a href="#5-缓存机制" class="headerlink" title="5.缓存机制"></a>5.缓存机制</h5><p><strong>Hibernate缓存</strong><br>①一级缓存<br>Hibernate一级缓存是Session缓存（内置缓存），一级缓存在Session中实现，当Session关闭一级缓存即失效。<br><img src="http://upload-images.jianshu.io/upload_images/3579909-cdf05dd083e004b7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="user2的查询会使用一级缓存"><br>使用contains方法来判断对象是否存在一级缓存中：<br><img src="http://upload-images.jianshu.io/upload_images/3579909-87829dcacfbb0a6a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>另外：</p>
+<ul>
+<li>clear方法用于将所有对象从一级缓存中清除</li>
+<li>evict方法用于将指定对象从一级缓存中清除<br><img src="http://upload-images.jianshu.io/upload_images/3579909-8af5678176c7e267.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>②二级缓存<br>Hibernate二级缓存是SessionFactory级的缓存。在Hibernate中二级缓存在SessionFactory中实现，由一个SessionFactory的所有Session实例所共享。<br>Session在查找一个对象时，会首先在自己的一级缓存中进行查找，如果没有找到，则进入二级缓存中进行查找，如果二级缓存中存在，则将对象返回，如果二级缓存中也不存在，则从数据库中获得。<br>Hibernate并未提供对二级缓存的产品化实现，而是为第三方缓存组件的使用提供了接口，当前Hibernate支持的第三方二级缓存的实现如下：<br>• EHCache<br>• Proxool<br>• OSCache<br>• SwarmCache<br>• JBossCache<br>下面介绍一下EHCache的使用：<br>导入jar包<br>添加ehcache.xml<br>设置二级缓存<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//ehcache.xml</span><br><span class="line">&lt;ehcache&gt;</span><br><span class="line">    &lt;diskStore path=&quot;java.io.tmpdir&quot;/&gt;</span><br><span class="line">    &lt;defaultCache</span><br><span class="line">        maxElementsInMemory=“10000“ →缓存中最大允许保存的对象数量</span><br><span class="line">        eternal=“false“ →缓存中数据是否为常量</span><br><span class="line">        timeToIdleSeconds=“120“ →缓存数据钝化时间，单位为秒</span><br><span class="line">        timeToLiveSeconds=“120“ →缓存数据生存时间，单位为秒</span><br><span class="line">        overflowToDisk=“true“ →内存不足时，是否启用磁盘缓存</span><br><span class="line">        /&gt;</span><br><span class="line">&lt;/ehcache&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>开启二级缓存:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//hibernate.cfg.xml</span><br><span class="line">&lt;hibernate-configuration&gt;</span><br><span class="line">      &lt;session-factory&gt;</span><br><span class="line">      …</span><br><span class="line">        &lt;property name=&quot;hibernate.cache.region.factory_class&quot;&gt;</span><br><span class="line">        org.hibernate.cache.ehcache.EhCacheRegionFactory</span><br><span class="line">      &lt;/property&gt;</span><br><span class="line">      …</span><br><span class="line">      &lt;/session-factory&gt;</span><br><span class="line">&lt;/hibernate-configuration&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>MyBatis缓存</strong><br>MyBatis 包含一个非常强大的查询缓存特性,它可以非常方便地配置和定制。MyBatis 3 中的缓存实现的很多改进都已经实现了,使得它更加强大而且易于配置。<br>默认情况下是没有开启缓存的,除了局部的 session 缓存,可以增强变现而且处理循环 依赖也是必须的。要开启二级缓存,你需要在你的 SQL 映射文件中添加一行:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;cache/&gt;</span><br></pre></td></tr></table></figure></p>
+<p>作用：<br>• 映射语句文件中所有的select语句将被缓存<br>• 映射语句文件中的所有insert、update、delete语句会刷新缓存<br>• 缓存会使用least recentily used(LRU，最近很少使用的)算法来收回<br>• 根据时间间隔来刷新缓存，默认不刷新<br>• 缓存会存储列表集合或对象的1024个引用<br>• 缓存被视为read/write的缓存<br>注意：<br>select语句中设置useCache = “false”将不被缓存；<br>语句中设置flushCache = “false”将不刷新缓存；<br>pojo类必须是可序列化类。<br><strong>不同点：</strong><br>Hibernate的二级缓存配置在SessionFactory生成的配置文件中进行详细配置，然后再在具体的表-对象映射中配置是那种缓存。<br>MyBatis的二级缓存配置都是在每个具体的表-对象映射中进行详细配置，这样针对不同的表可以自定义不同的缓存机制。并且Mybatis可以在命名空间中共享相同的缓存配置和实例，通过Cache-ref来实现。<br><strong>两者比较：</strong><br>因为Hibernate对查询对象有着良好的管理机制，用户无需关心SQL。所以在使用二级缓存时如果出现脏数据，系统会报出错误并提示。<br>而MyBatis在这一方面，使用二级缓存时需要特别小心。如果不能完全确定数据更新操作的波及范围，避免Cache的盲目使用。否则，脏数据的出现会给系统的正常运行带来很大的隐患。</p>
+<h5 id="6-优势对比"><a href="#6-优势对比" class="headerlink" title="6.优势对比"></a>6.优势对比</h5><p><strong>Mybatis优势</strong></p>
+<ul>
+<li>MyBatis可以进行更为细致的SQL优化，可以减少查询字段。</li>
+<li>MyBatis容易掌握，而Hibernate门槛较高。</li>
+</ul>
+<p><strong>Hibernate优势</strong></p>
+<ul>
+<li>Hibernate的DAO层开发比MyBatis简单，Mybatis需要维护SQL和结果映射。</li>
+<li>Hibernate对对象的维护和缓存要比MyBatis好，对增删改查的对象的维护要方便。</li>
+<li>Hibernate功能强大，数据库无关性好，O/R映射能力强。Hibernate数据库移植性很好，MyBatis的数据库移植性不好，不同的数据库需要写不同SQL。</li>
+<li>Hibernate有更好的二级缓存机制，可以使用第三方缓存。MyBatis本身提供的缓存机制不佳。</li>
+</ul>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoursite.com/post/ORM框架MyBatis与Hibernate对比.html" data-title="ORM框架MyBatis与Hibernate对比 | 沐雨星光" data-tsina="" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/post/Maven学习初级入门.html"  title="Maven学习初级入门">
+ <strong>下一篇：</strong><br/> 
+ <span>Maven学习初级入门
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-开发速度对比"><span class="toc-number">1.</span> <span class="toc-text">1.开发速度对比</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-开发工作量对比"><span class="toc-number">2.</span> <span class="toc-text">2.开发工作量对比</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-SQL优化方面"><span class="toc-number">3.</span> <span class="toc-text">3.SQL优化方面</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-对象管理的对比"><span class="toc-number">4.</span> <span class="toc-text">4.对象管理的对比</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-缓存机制"><span class="toc-number">5.</span> <span class="toc-text">5.缓存机制</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6-优势对比"><span class="toc-number">6.</span> <span class="toc-text">6.优势对比</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+
+  
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://wuchong.me" target="_blank" title="Jark&#39;s Blog">Jark&#39;s Blog</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://zhaoyan.ink/" target="_blank" title="ZhaoYan&#39;s Blog">ZhaoYan&#39;s Blog</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://www.hollischuang.com/" target="_blank" title="HollisChuang&#39;s Blog">HollisChuang&#39;s Blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,this&#39;s ZhangYu&#39;s Blog. <br/>
+			</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2018 
+		
+		<a href="/about" target="_blank" title="张雨">张雨</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
