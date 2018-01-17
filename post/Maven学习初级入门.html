@@ -1,0 +1,469 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>沐雨星光</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="张雨">
+    
+
+    
+    <meta name="description" content="Maven官方网站  Apache Maven是一个软件项目管理和综合工具。基于项目对象模型（POM）的概念，Maven可以从一个中心资料片管理项目构建，报告和文件。 您曾经是否会遇到这些问题：1.我们要开发一个 Java 项目，为了保证编译通过，我们会到处去寻找 jar 包。当编译通过了，在运行的时候，却发现 ClassNotFoundException，卧槽！还差 jar 包啊？再去找找吧。2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="沐雨星光">
+<meta property="og:url" content="http://yoursite.com/post/Maven学习初级入门.html">
+<meta property="og:site_name" content="沐雨星光">
+<meta property="og:description" content="Maven官方网站  Apache Maven是一个软件项目管理和综合工具。基于项目对象模型（POM）的概念，Maven可以从一个中心资料片管理项目构建，报告和文件。 您曾经是否会遇到这些问题：1.我们要开发一个 Java 项目，为了保证编译通过，我们会到处去寻找 jar 包。当编译通过了，在运行的时候，却发现 ClassNotFoundException，卧槽！还差 jar 包啊？再去找找吧。2">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3579909-1f92371bdef8e6c1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3579909-12e4c4fc79e8b4fa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3579909-cef2592374cd354f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3579909-95c04925fd25bd5a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3579909-bb358907ec0d5728.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-01-17T05:37:29.110Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="沐雨星光">
+<meta name="twitter:description" content="Maven官方网站  Apache Maven是一个软件项目管理和综合工具。基于项目对象模型（POM）的概念，Maven可以从一个中心资料片管理项目构建，报告和文件。 您曾经是否会遇到这些问题：1.我们要开发一个 Java 项目，为了保证编译通过，我们会到处去寻找 jar 包。当编译通过了，在运行的时候，却发现 ClassNotFoundException，卧槽！还差 jar 包啊？再去找找吧。2">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/3579909-1f92371bdef8e6c1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="沐雨星光" title="沐雨星光"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="沐雨星光">沐雨星光</a></h1>
+				<h2 class="blog-motto">分享技术，共同进步！</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/about">关于</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/post/Maven学习初级入门.html" title="" itemprop="url"></a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="张雨" target="_blank" itemprop="author">张雨</a>
+		
+  <p class="article-time">
+    <time datetime="2018-01-17T05:33:20.446Z" itemprop="datePublished"> Published 2018-01-17</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<p><a href="http://maven.apache.org/" target="_blank" rel="noopener">Maven官方网站</a></p>
+<blockquote>
+<p>Apache Maven是一个软件项目管理和综合工具。基于项目对象模型（POM）的概念，Maven可以从一个中心资料片管理项目构建，报告和文件。</p>
+<p>您曾经是否会遇到这些问题：<br>1.我们要开发一个 Java 项目，为了保证编译通过，我们会到处去寻找 jar 包。当编译通过了，在运行的时候，却发现 ClassNotFoundException，卧槽！还差 jar 包啊？再去找找吧。<br>2.每个 Java 项目的目录结构都没有一个统一的标准，配置文件到处都是，单元测试代码到底应该放在哪里，没有一个权威的规范。<br>3.可使用 Ant 做为项目构建工具，它可以自动化地完成编译、测试、打包等任务，确实为我们省了不少事儿，但编写 Ant 的 XML 脚本绝非是一件轻松的事情。<br>有了 Maven，以上这一切都不再是问题了。</p>
+</blockquote>
+<h5 id="看来Maven-要做的是两件事情："><a href="#看来Maven-要做的是两件事情：" class="headerlink" title="看来Maven 要做的是两件事情："></a>看来Maven 要做的是两件事情：</h5><ul>
+<li>统一开发规范与工具；</li>
+<li>统一管理 jar 包。</li>
+</ul>
+<h5 id="一、使用前提"><a href="#一、使用前提" class="headerlink" title="一、使用前提"></a>一、使用前提</h5><p>1.下载连接 <a href="http://maven.apache.org/download.cgi" target="_blank" rel="noopener">http://maven.apache.org/download.cgi</a><br>2.配置环境变量<br>M2_HOME = maven根路径</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/3579909-1f92371bdef8e6c1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="maven根路径"></p>
+<p>  PATH = maven根路径/bin</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/3579909-12e4c4fc79e8b4fa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="maven根路径/bin"></p>
+<p>3.配置好之后，我们就可以执行maven命令了<br>mvn -v     显示maven版本信息</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/3579909-cef2592374cd354f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="maven版本信息"></p>
+<h5 id="二、了解-Maven-仓库"><a href="#二、了解-Maven-仓库" class="headerlink" title="二、了解 Maven 仓库"></a>二、了解 Maven 仓库</h5><p>使用 Maven 给我们带来的最直接的帮助，就是 jar 包得到了统一管理，那么这些 jar 包存放在哪里呢？它们就在您的本地仓库中，位于 C:\Users\用户名.m2 目录下（当然也可以修改这个默认地址）。<br>实际上可将本地仓库理解“缓存”，因为项目首先会从本地仓库中获取 jar 包，当无法获取指定 jar 包的时候，本地仓库会从 远程仓库（或 中央仓库）中下载 jar 包，并放入本地仓库中以备将来使用。这个远程仓库是 Maven 官方提供的，可通过 <a href="http://search.maven.org/" target="_blank" rel="noopener">http://search.maven.org/</a> 来访问。这样一来，本地仓库会随着项目的积累越来越大。通过下面这张图可以清晰地表达项目、本地仓库、远程仓库之间的关系。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/3579909-95c04925fd25bd5a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图解本地仓库与中央仓库"></p>
+<blockquote>
+<p>maven查找依赖的顺序</p>
+</blockquote>
+<p>1.从本地仓库中查找所需要的依赖<br>2.从私有仓库中查找所需要的依赖<br>3.从中央仓库（<a href="http://repo.maven.apache.org/）中查找所需要的依赖" target="_blank" rel="noopener">http://repo.maven.apache.org/）中查找所需要的依赖</a></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/3579909-bb358907ec0d5728.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="maven查找依赖的顺序"></p>
+<h5 id="三、理解-pom-xml"><a href="#三、理解-pom-xml" class="headerlink" title="三、理解 pom.xml"></a>三、理解 pom.xml</h5><blockquote>
+<p>pom.xml 称为 Project Object Model（项目对象模型），它用于描述整个 Maven 项目，所以也称为 Maven 描述文件。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;</span><br><span class="line">         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0</span><br><span class="line">         http://maven.apache.org/maven-v4_0_0.xsd&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line"></span><br><span class="line">    &lt;groupId&gt;com.smart&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;smart-demo&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.0&lt;/version&gt;</span><br><span class="line">    &lt;packaging&gt;war&lt;/packaging&gt;</span><br><span class="line"></span><br><span class="line">    &lt;name&gt;smart-demo Maven Webapp&lt;/name&gt;</span><br><span class="line">    &lt;url&gt;http://maven.apache.org&lt;/url&gt;</span><br><span class="line"></span><br><span class="line">    &lt;dependencies&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;junit&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;junit&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;3.8.1&lt;/version&gt;</span><br><span class="line">            &lt;scope&gt;test&lt;/scope&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">    &lt;/dependencies&gt;</span><br><span class="line"></span><br><span class="line">    &lt;build&gt;</span><br><span class="line">        &lt;finalName&gt;smart-demo&lt;/finalName&gt;</span><br><span class="line">    &lt;/build&gt;&lt;/project&gt;</span><br></pre></td></tr></table></figure>
+<p>从上往下简要说明：</p>
+<p><strong>modelVersion</strong>：这个是 POM 的版本号，现在都是 4.0.0 的，必须得有，但不需要修改。</p>
+<p><strong>groupId、artifactId、version</strong>：分别表示 Maven 项目的组织名、构件名、版本号，它们三个合起来就是 Maven <strong>坐标，根据这个坐标可以在 Maven 仓库中对应唯一的 </strong>Maven 构件。</p>
+<p><strong>packaging</strong>：表示该项目的打包方式，war 表示打包为 war 文件，默认为 jar，表示打包为 jar 文件。</p>
+<p><strong>name、url</strong>：表示该项目的名称与 URL 地址，意义不大，可以省略。</p>
+<p><strong>dependencies</strong>：定义该项目的依赖关系，其中每一个 dependency 对应一个 Maven 项目，可见 Maven 坐标再次出现，还多了一个 scope，表示作用域（下面会描述）。</p>
+<p><strong>build</strong>：表示与构建相关的配置，这里的 finalName 表示最终构建后的名称 smart-demo.war，这里的 finalName 还可以使用另一种方式来定义。</p>
+<p>除了项目的基本信息（Maven 坐标、打包方式等）以外，每个 pom.xml 都应该包括：</p>
+<p><strong>Lifecycle（生命周期）</strong></p>
+<p><strong>Plugins（插件）</strong></p>
+<p><strong>Dependencies（依赖）</strong></p>
+<p>Lifecycle 是项目构建的生命周期，它包括 9 个 Phase（阶段）。</p>
+<p>大家知道，Maven 是一个核心加上多个插件的架构，而这些插件提供了一系列非常重要的功能，这些插件会在许多阶段里发挥重要作用。<br>阶段插件作用：<br><strong>clean</strong><br>clean 清理自动生成的文件，也就是 target 目录<br><strong>validate</strong><br>由 Maven 核心负责 验证 Maven 描述文件是否有效<br><strong>compile</strong><br>compile 编译后产生target目录，里面存放的就是编译后的字节码文件<br><strong>test</strong><br>compiler、surefire、resources 运行测试代码<br><strong>package</strong><br>war 项目打包，就是生成构件包，也就是打 war 包<br><strong>verify</strong><br>由 Maven 核心负责，验证构件包是否有效<br><strong>install</strong><br>install 将构件包安装到本地仓库<br><strong>site</strong><br>site 生成项目站点，就是一堆静态网页文件，包括 JavaDoc<br><strong>deploy</strong><br>deploy 将构件包部署到远程仓库</p>
+<h5 id="四、使用-Maven-命令"><a href="#四、使用-Maven-命令" class="headerlink" title="四、使用 Maven 命令"></a>四、使用 Maven 命令</h5><p>可使用两种不同的方式来执行 Maven 命令：</p>
+<p>方式一：mvn &lt;插件&gt;:&lt;目标&gt; [参数]</p>
+<p>方式二：mvn &lt;阶段&gt;</p>
+<p>现在我们接触到的都是第一种方式，而第二种方式才是我们日常中使用最频繁的，例如：</p>
+<p>mvn clean：清空输出目录（即 target 目录）</p>
+<p>mvn compile：编译源代码</p>
+<p>mvn package：生成构件包（一般为 jar 包或 war 包）</p>
+<p>mvn install：将构件包安装到本地仓库</p>
+<p>mvn deploy：将构件包部署到远程仓库</p>
+<p>执行 Maven 命令需要注意的是：必须在 Maven 项目的根目录处执行，也就是当前目录下一定存在一个名为 pom.xml 的文件。</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoursite.com/post/Maven学习初级入门.html" data-title="沐雨星光" data-tsina="" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/post/Java的类与继承.html"  title="Java的类与继承">
+ <strong>下一篇：</strong><br/> 
+ <span>Java的类与继承
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#看来Maven-要做的是两件事情："><span class="toc-number">1.</span> <span class="toc-text">看来Maven 要做的是两件事情：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#一、使用前提"><span class="toc-number">2.</span> <span class="toc-text">一、使用前提</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#二、了解-Maven-仓库"><span class="toc-number">3.</span> <span class="toc-text">二、了解 Maven 仓库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#三、理解-pom-xml"><span class="toc-number">4.</span> <span class="toc-text">三、理解 pom.xml</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#四、使用-Maven-命令"><span class="toc-number">5.</span> <span class="toc-text">四、使用 Maven 命令</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+
+  
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="https://zhaoyan.ink/" target="_blank" title="ZhaoYan&#39;s Blog">ZhaoYan&#39;s Blog</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://wuchong.me" target="_blank" title="Jark&#39;s Blog">Jark&#39;s Blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,this&#39;s ZhangYu&#39;s Blog. <br/>
+			</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2018 
+		
+		<a href="/about" target="_blank" title="张雨">张雨</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
